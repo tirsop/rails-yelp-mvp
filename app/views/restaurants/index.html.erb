@@ -1,0 +1,31 @@
+
+
+
+<div class="container">
+
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="my-5">Restaurants</h1>
+    <%= link_to new_restaurant_path do %>
+      <i class="fas fa-file-plus"></i>egrgsdvsb
+    <% end %>
+  </div>
+
+  <div class="row d-flex justify-content-between">
+
+    <% @restaurants.each do |restaurant| %>
+
+      <div class="col">
+        <%= link_to restaurant_path(restaurant) do %>
+          <div class="card mb-2" style='width: 100%'>
+            <%= image_tag "https://loremflickr.com/320/240/#{restaurant.name}", class: 'card-img-top' %>
+            <div class="card-body">
+              <h5 class="card-title"><%= restaurant.name %></h5>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
